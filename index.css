@@ -1,0 +1,25 @@
+body {
+    background-color: pink;
+
+    display: block;
+    padding: 5px;
+    height: 300px;
+}
+
+.active {
+    background-color: red;
+}
+
+.keyboard {
+    width: 60px;
+    height: 60px;
+    border: 2px solid rgb(216, 94, 134);
+    border-radius: 5px;
+    float: left;
+    margin-right: 5px;
+    margin-bottom: 5px;
+}
+
+.clearfix {
+    clear: both;
+}
