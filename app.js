@@ -39,7 +39,6 @@ body.onkeyup = function (event) {
 body.querySelectorAll('.keyboard').forEach(function (element) {
     element.onclick = function () {
         let code = this.getAttribute('data');
-        // This — это ссылка на контекст исполнения функции
         this.classList.add('active');
         console.log(code);
         setTimeout(() => {
