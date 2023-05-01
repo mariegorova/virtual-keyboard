@@ -22,7 +22,6 @@ const generateButton = () => {
 };
 generateButton();
 
-// Чтобы определить, нажимает ли пользователь клавишу, всегда используйте событие onkeydown .
 body.onkeydown = function (event) {
     let activeBtn = body.querySelector(
         '.keyboard[data= "' + event.which + '"]'
@@ -30,6 +29,21 @@ body.onkeydown = function (event) {
     activeBtn.classList.add('active');
 };
 
-// body.querySelectorAll('keyboard').forEach(function (element) {
-//     element.classList.remove('active');
-// });
+body.onkeyup = function (event) {
+    let activeBtn = body.querySelector(
+        '.keyboard[data= "' + event.which + '"]'
+    );
+    activeBtn.classList.remove('active');
+};
+
+body.querySelectorAll('.keyboard').forEach(function (element) {
+    element.onclick = function () {
+        let code = this.getAttribute('data');
+        // This — это ссылка на контекст исполнения функции
+        this.classList.add('active');
+        console.log(code);
+        setTimeout(() => {
+            this.classList.remove('active');
+        }, '300');
+    };
+});
